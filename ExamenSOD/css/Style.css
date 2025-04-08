@@ -1,0 +1,191 @@
+body{
+
+    background-color:#fbb07a;
+}
+
+.containerLogin{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.LoginForm{
+
+    background-color: #02013B ;
+    height: 472px;
+    width: 456px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.LoginForm label {
+
+    color: #fff;
+ position: relative;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+.LoginForm input{
+
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+ 
+.Loguit{
+
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* Dashboard container styling */
+.Dashboard {
+    background-color: #02013B; 
+    height: 60vh; 
+    width: 80vw; 
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Dashboard table styling */
+.Dashboard table {
+    color: #fff; 
+    text-align: center;
+    margin-top: 20px;
+    width: 90%; 
+    border-collapse: collapse; 
+}
+
+.Dashboard table th, .Dashboard table td {
+    border: 1px solid #fff; 
+    padding: 10px; 
+}
+
+.Dashboard table th {
+    background-color: #1A1A5E; 
+    font-weight: bold;
+}
+
+.Dashboard table tr:nth-child(even) {
+    background-color: #2A2A6E;
+}
+
+/* Titel styling */
+.Dashboard h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+   
+}
+
+/* Knoppen styling */
+.Dashboard .button {
+    background-color: #fbb07a;
+    color: #02013B; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.Acties a{
+    text-decoration: none;
+    color: #fff;
+   }
+
+.loguit h2 {
+    margin: 0; /* Verwijder eventuele standaard marges */
+    text-align: left; /* Zorg ervoor dat de tekst links is uitgelijnd */
+    display: flex;
+    justify-content: start;
+}
+.Loguit a {
+    color: black; 
+    text-decoration: none; 
+    font-size: 16px; 
+    font-weight: bold; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    display: flex;
+justify-content: end;
+    align-items: center;
+   
+    
+}
+
+.Nieuwetaak {
+  
+    text-decoration: none;
+    color: black;
+    background-color: #fff;
+    height: 5%;
+    width: 10%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-left: auto;
+
+}
+
+.containerTaak {
+    background-color: #02013B ;
+    height: 585px;
+    width: 456px;
+}
+
+.containerTaak h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center; 
+}
+.containerTaak label {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.containerTaak input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.containerTaak a {
+    text-decoration: none;
+    margin-top: 30px; 
+    color: #fff;
+    display: inline-block; 
+}
+
+.containerTaak button {
+    
+    margin-bottom: 20px;
+
+}

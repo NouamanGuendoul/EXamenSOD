@@ -14,11 +14,16 @@ $taken = $task->getAllByUser($_SESSION['user_id']);
 <!DOCTYPE html>
 <html>
 <head><title>Dashboard</title></head>
+<link rel="stylesheet" href="../css/style.css">
 <body>
-<h2>Welkom, <?php echo htmlspecialchars($gebruiker['naam']); ?>!</h2>
-<a href="logout.php">Uitloggen</a> | <a href="add_task.php">+ Nieuwe taak</a>
+<div class="Loguit"><h2>Welkom, <?php echo htmlspecialchars($gebruiker['naam']); ?>!</h2> 
+<a  href="login.php">Uitloggen</a></div>
 
-<h3>Jouw Taken</h3>
+<div class="Dashboard">
+
+    <a href="add_task.php" class="Nieuwetaak">Nieuwe taak</a>
+
+<h3>Jouw Taken</h3>  
 <table border="1" cellpadding="5">
     <tr>
         <th>Titel</th>
@@ -27,18 +32,21 @@ $taken = $task->getAllByUser($_SESSION['user_id']);
         <th>Status</th>
         <th>Acties</th>
     </tr>
+   
     <?php foreach ($taken as $taak): ?>
         <tr>
             <td><?php echo htmlspecialchars($taak['titel']); ?></td>
             <td><?php echo htmlspecialchars($taak['beschrijving']); ?></td>
             <td><?php echo htmlspecialchars($taak['deadline']); ?></td>
             <td><?php echo htmlspecialchars($taak['status']); ?></td>
-            <td>
+            <td class="Acties">
+
                 <a href="edit_task.php?id=<?php echo $taak['id']; ?>">Bewerk</a> |
                 <a href="delete_task.php?id=<?php echo $taak['id']; ?>" onclick="return confirm('Weet je het zeker?')">Verwijder</a>
             </td>
         </tr>
     <?php endforeach; ?>
 </table>
+</div>
 </body>
 </html>

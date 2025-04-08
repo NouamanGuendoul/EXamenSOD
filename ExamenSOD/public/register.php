@@ -20,12 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head><title>Registreren</title></head>
+<link rel="stylesheet" href="../css/style.css">
 <body>
+    <div class="containerLogin">
 <h2>Registreren</h2>
 <?php if ($foutmelding): ?>
     <p style="color:red;"><?php echo htmlspecialchars($foutmelding); ?></p>
 <?php endif; ?>
-<form method="POST">
+<form class="LoginForm" method="POST">
     <label>Naam:</label><br>
     <input type="text" name="naam" required><br>
     <label>Email:</label><br>
@@ -34,5 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="password" name="wachtwoord" required><br><br>
     <input type="submit" value="Registreren">
 </form>
+</div>
 </body>
 </html>

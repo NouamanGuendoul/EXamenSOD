@@ -26,13 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head><title>Bewerk Taak</title></head>
+<link rel="stylesheet" href="../css/style.css">
 <body>
+    <div class="containerTaak">
 <h2>Taak bewerken</h2>
 <form method="POST">
     <label>Titel:</label><br>
     <input type="text" name="titel" value="<?php echo htmlspecialchars($taak['titel']); ?>" required><br>
     <label>Beschrijving:</label><br>
-    <textarea name="beschrijving"><?php echo htmlspecialchars($taak['beschrijving']); ?></textarea><br>
+    <input name="beschrijving"><?php echo htmlspecialchars($taak['beschrijving']); ?></input><br>
     <label>Deadline:</label><br>
     <input type="date" name="deadline" value="<?php echo htmlspecialchars($taak['deadline']); ?>"><br>
     <label>Status:</label><br>
@@ -44,4 +46,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 <a href="dashboard.php">← Terug</a>
 </body>
+</div>
 </html>
