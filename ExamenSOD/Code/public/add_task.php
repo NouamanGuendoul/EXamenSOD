@@ -20,11 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="containerTaak">
 <h2>Nieuwe Taak Toevoegen</h2>
 <form method="POST">
-    <label>Titel:</label><br>
+    <label>Titel*:</label><br>
     <input type="text" name="titel" required><br>
-    <label>Beschrijving:</label><br>
-    <input name="beschrijving" required></input><br>
-    <label>Deadline:</label><br>
+    <label>Beschrijving*:</label><br>
+    <textarea   name="beschrijving" required ></textarea><br>
+    <label>Deadline*:</label><br>
     <input type="date" name="deadline" required><br><br>
     <input type="submit" value="Opslaan">
 </form>

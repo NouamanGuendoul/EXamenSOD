@@ -8,7 +8,14 @@ $user = new User();
 $task = new Task();
 
 $gebruiker = $user->getUserById($_SESSION['user_id']);
-$taken = $task->getAllByUser($_SESSION['user_id']);
+
+$statusFilter = $_GET['status'] ?? null;
+if ($statusFilter) {
+    $taken = $task->getByStatus($_SESSION['user_id'], $statusFilter);
+} else {
+    $taken = $task->getAllByUser($_SESSION['user_id']);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +39,14 @@ $taken = $task->getAllByUser($_SESSION['user_id']);
         <th>Status</th>
         <th>Acties</th>
     </tr>
+
+    <div class="status-filter">
+    <a href="dashboard.php" class="<?php if (!isset($_GET['status'])) echo 'active'; ?>">Alle</a>
+    <a href="dashboard.php?status=niet voltooid" class="<?php if ($_GET['status'] ?? '' === 'niet voltooid') echo 'active'; ?>">Niet voltooid</a>
+    <a href="dashboard.php?status=in behandeling" class="<?php if ($_GET['status'] ?? '' === 'in behandeling') echo 'active'; ?>">In behandeling</a>
+    <a href="dashboard.php?status=voltooid" class="<?php if ($_GET['status'] ?? '' === 'voltooid') echo 'active'; ?>">Voltooid</a>
+</div>
+
    
     <?php foreach ($taken as $taak): ?>
         <tr>
@@ -42,7 +57,7 @@ $taken = $task->getAllByUser($_SESSION['user_id']);
             <td class="Acties">
 
                 <a href="edit_task.php?id=<?php echo $taak['id']; ?>">Bewerk</a> |
-                <a href="delete_task.php?id=<?php echo $taak['id']; ?>" onclick="return confirm('Weet je het zeker?')">Verwijder</a>
+                <a href="delete_task.php?id=<?php echo $taak['id']; ?>" onclick="return confirm('Weet je het zeker dat je het wil verwijderen?')">Verwijder</a>
             </td>
         </tr>
     <?php endforeach; ?>

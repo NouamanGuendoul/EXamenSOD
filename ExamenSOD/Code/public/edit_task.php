@@ -31,16 +31,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="containerTaak">
 <h2>Taak bewerken</h2>
 <form method="POST">
-    <label>Titel:</label><br>
+    <label>Titel*:</label><br>
     <input type="text" name="titel" value="<?php echo htmlspecialchars($taak['titel']); ?>" required><br>
-    <label>Beschrijving:</label><br>
-    <input name="beschrijving"><?php echo htmlspecialchars($taak['beschrijving']); ?></input><br>
-    <label>Deadline:</label><br>
+    <label>Beschrijving*:</label><br>
+    <textarea name="beschrijving"><?php echo htmlspecialchars($taak['beschrijving']); ?></textarea><br>
+    <label>Deadline*:</label><br>
     <input type="date" name="deadline" value="<?php echo htmlspecialchars($taak['deadline']); ?>"><br>
-    <label>Status:</label><br>
+    <label>Status*:</label><br>
     <select name="status">
-        <option value="niet voltooid" <?php if ($taak['status'] === 'niet voltooid') echo 'selected'; ?>>Niet voltooid</option>
-        <option value="voltooid" <?php if ($taak['status'] === 'voltooid') echo 'selected'; ?>>Voltooid</option>
+            <option value="In behandeling" <?php if ($taak['status'] === 'In behandeling') echo 'selected'; ?>>In behandeling</option>
+            <option value="niet voltooid" <?php if ($taak['status'] === 'niet voltooid') echo 'selected'; ?>>Niet voltooid</option>
+            <option value="voltooid" <?php if ($taak['status'] === 'voltooid') echo 'selected'; ?>>Voltooid</option>
     </select><br><br>
     <input type="submit" value="Opslaan">
 </form>

@@ -41,4 +41,15 @@ class Task {
         $stmt = $this->pdo->prepare("UPDATE taken SET status = ? WHERE id = ?");
         return $stmt->execute([$nieuweStatus, $id]);
     }
+
+    public function DeadlineSort(){
+        $stmt = $this->pdo->prepare("SELECT*From taken ORDER BY deadline");
+    }
+
+     public function getByStatus($userId, $status) {
+        $stmt = $this->pdo->prepare("SELECT * FROM taken WHERE gebruiker_id = ? AND status = ? ORDER BY deadline ASC");
+        $stmt->execute([$userId, $status]);
+        return $stmt->fetchAll();
+    }
+    
 }

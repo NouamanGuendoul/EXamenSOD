@@ -1,5 +1,6 @@
 body{
 
+    font-family: "Your Font Name", sans-serif;
     background-color:#fbb07a;
 }
 
@@ -115,8 +116,8 @@ body{
    }
 
 .loguit h2 {
-    margin: 0; /* Verwijder eventuele standaard marges */
-    text-align: left; /* Zorg ervoor dat de tekst links is uitgelijnd */
+    margin: 0; 
+    text-align: left;
     display: flex;
     justify-content: start;
 }
@@ -188,4 +189,29 @@ justify-content: end;
     
     margin-bottom: 20px;
 
+}
+
+
+.status-filter {
+    margin-bottom: 15px;
+}
+
+.status-filter a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 6px 12px;
+    background-color: #f2f2f2;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.status-filter a:hover {
+    background-color: #ddd;
+}
+
+.status-filter a.active {
+    background-color: #4285f4;
+    color: white;
 }
